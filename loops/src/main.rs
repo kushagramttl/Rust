@@ -22,4 +22,10 @@ fn main() {
     for elem in a.iter() {
         println!("The value in iteration is: {}", elem);
     }
+
+    println!("Preparing for liftoff!");
+    for number in (1..10).rev() {
+        println!("T-{}", number);
+    }
+    println!("LIFTOFF!");
 }
