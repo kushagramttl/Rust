@@ -14,5 +14,33 @@ fn main() {
     println!("Value in s3: {}", s3);
     println!("Value in s4: {}", s4);
 
-    
+    let mut mutable_string = String::from("Mutable String");
+    println!("Original string: {}", mutable_string);
+    update_string(&mut mutable_string);
+    println!("Updated string: {}", mutable_string);
+
+    let borrow_string = String::from("Hello World!");
+
+    println!("Borrowed String is: {}", borrow_string);
+
+    let word = first_word(&borrow_string);
+
+    println!("The first word is: {}", word)
+
+}
+
+fn update_string(some_string: &mut String) {
+    some_string.push_str(", with pushed content");
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[..i];
+        }
+    }
+
+    &s[..]
 }
