@@ -20,10 +20,14 @@ impl Rectangle {
             height: size
         }
     }
+
+    fn update_height(&mut self, new_height: u32) {
+        self.height = new_height;
+    }
 }
 
 fn main() {
-    let rect1 = Rectangle {
+    let mut rect1 = Rectangle {
         width: 30,
         height: 50
     };
@@ -51,6 +55,10 @@ fn main() {
 
     // let sq = Rectangle::square(10);
     println!("The square is: {:#?} \n", Rectangle::square(10));
+
+    rect1.update_height(30);
+
+    println!("Rectangle with updated height is: {:#?}", rect1);
 }
 
 fn area(rect: &Rectangle) -> u32 {
