@@ -22,3 +22,10 @@ pub fn eat_at_restaurant() {
     // Relative path
     front_of_house::hosting::add_to_waitlist();
 }
+
+use crate::front_of_house::hosting::add_to_waitlist;
+
+pub fn create_waitlist() {
+    add_to_waitlist();
+    add_to_waitlist();
+}
