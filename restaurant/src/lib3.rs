@@ -1,3 +1,10 @@
+/**
+ * 
+ * The example shows how we can make use of a structure inside a module
+ * It can be seen that the method 'summer' and variable 'toast' are accessible outside the module
+ * 
+ */
+
 mod back_of_house {
     pub struct Breakfast {
         pub toast: String,
